@@ -1,0 +1,77 @@
+
+---
+const navPages = [
+    { name: 'About', href: '#'},
+    { name: 'Careers', href: '#'},
+    { name: 'Events', href: '#'},
+    { name: 'Products', href: '#'},
+    { name: 'Support', href: '#'}
+];
+---
+
+<nav class="flex items-center justify-between px-5 py-11
+md:px-20 md:py-20 lg:px-30">
+
+    <img class="z-50"
+    src="/images/logo.svg" alt="Loopstudios logo">
+
+    <!-- Desktop -->
+    <ul class="hidden gap-7 
+    md:flex">
+
+        { navPages.map((page) => (
+            <li>
+                <a href={ page.href }
+                class="text-white pb-1 hover:border-b-2 hover:border-white">
+
+                    { page.name }
+                </a>
+            </li>
+        ))}
+    </ul>
+
+    <!-- Mobile -->
+    <button id="menu-btn" class="z-50
+    md:hidden">
+        <img id="hamburger" src="/images/icon-hamburger.svg" alt="Menu">
+
+        <img class="hidden"
+        id="close" src="/images/icon-close.svg" alt="Close">
+    </button>
+
+    <div id="menu" class="z-40 fixed bg-black inset-0 hidden">
+
+        <div class="h-full">
+
+            <ul class="flex flex-col justify-center px-5 mt-45">
+
+                <li class="flex flex-col space-y-5">   
+
+                    { navPages.map((page) => (
+                        <a class="text-white text-3xl" style="font-family: 'Josefin Sans';"
+                        href={ page.href }>
+                            { page.name }
+                        </a>
+                    ))}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<script>
+
+    const menubtn = document.getElementById('menu-btn');
+    const hamburger = document.getElementById('hamburger');
+    const close = document.getElementById('close');
+    const menu = document.getElementById('menu');
+
+    menubtn?.addEventListener('click', () => {
+        hamburger?.classList.toggle('hidden');
+        close?.classList.toggle('hidden');
+        menu?.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden');
+    });
+
+</script>

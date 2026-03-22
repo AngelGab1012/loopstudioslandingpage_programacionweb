@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: "Alata","Josefin Sans";
+    src: url(../layouts/Layout.astro);
+}
+
+@layer base {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: "Alata";
+    }
+
+    h1 {
+        font-family: "Josefin Sans";
+    }
+}

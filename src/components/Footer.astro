@@ -1,0 +1,102 @@
+
+---
+const navPages = [
+    { name:'About', href:'#'},
+    { name:'Careers', href:'#'},
+    { name:'Events', href:'#'},
+    { name:'Products', href:'#'},
+    { name:'Support', href:'#'}
+];
+
+const socialsIcons = [
+    { src:'/images/icon-facebook.svg', alt:'Facebook' },
+    { src:'/images/icon-twitter.svg', alt:'Twitter'},
+    { src:'/images/icon-pinterest.svg', alt:'Pinterest'},
+    { src:'/images/icon-instagram.svg', alt:'Instagram'}
+];
+---
+
+<footer class="bg-black text-white pb-10 md:pb-20">
+
+    <!-- Mobile -->
+    <div class="lg:hidden">
+        <div class="flex flex-col items-center mb-10">
+
+            <img class="max-w-50 py-10"
+            src="/images/logo.svg" alt="Loopstudios logo">
+
+            <ul class="text-center">
+                { navPages.map((page) => (
+
+                    <li class="py-3">
+                        <a href={ page.href }>
+                            { page.name }    
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+
+        <div class="flex flex-col items-center">
+
+            <ul class="flex gap-3 pb-4">
+                { socialsIcons.map((social) => (
+                    <li>
+                        <img src={ social.src } alt={ social.alt}>
+                    </li>
+                ))}
+            </ul>
+
+            <p class="text-gray-400">
+                <small>
+                    &copy; 2021 Loopstudios. All rights reserved.
+                </small>
+            </p>
+        </div>
+   </div>
+   
+
+   <!-- Desktop -->
+   <div class="flex justify-between
+   max-[769px]:hidden">
+
+        <div class="px-30">
+
+            <img class="py-10"
+            src="/images/logo.svg" alt="Loopstudios logo">
+            
+            <ul class="flex gap-8">
+
+                { navPages.map((page) => (
+                    <li>
+                        <a href={ page.href } 
+                        class="pb-1 hover:border-b-2 hover:border-white">
+
+                            { page.name }
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        </div>
+
+        <div class="flex flex-col items-end px-30">
+
+            <ul class="flex gap-4 py-10 cursor-pointer">
+
+                { socialsIcons.map((social) => (
+                    <li class="hover:border-b-2 hover:border-white">
+
+                        <img class="pb-2"
+                        src={ social.src } alt={ social.alt }>
+                    </li>
+                ))}
+            </ul>
+
+            <p class="text-gray-400">
+                <small>
+                    &copy; 2021 Loopstudios. All rights reserved.
+                </small>
+            </p>
+        </div>
+   </div>
+</footer>

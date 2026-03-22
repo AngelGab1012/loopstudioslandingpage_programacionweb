@@ -1,0 +1,53 @@
+---
+const creations = [
+    { title:'DEEP EARTH', mobimages:'/images/mobile/image-deep-earth.jpg', deskimages:'/images/desktop/image-deep-earth.jpg', alt:'La Tierra vista desde el espacio' },
+    { title:'NIGHT ARCADE', mobimages:'/images/mobile/image-night-arcade.jpg', deskimages:'/images/desktop/image-night-arcade.jpg', alt:'Juego de Arcade' },
+    { title:'SOCCER TEAM VR', mobimages:'/images/mobile/image-soccer-team.jpg', deskimages:'/images/desktop/image-soccer-team.jpg', alt:'Jugador de futbol' },
+    { title:'THE GRID', mobimages:'/images/mobile/image-grid.jpg', deskimages:'/images/desktop/image-grid.jpg', alt:'Carro de F1' },
+    { title:'FROM UP ABOVE VR', mobimages:'/images/mobile/image-from-above.jpg', deskimages:'/images/desktop/image-from-above.jpg', alt:'Carretera con curvas' },
+    { title:'POCKET BOREALIS', mobimages:'/images/mobile/image-pocket-borealis.jpg', deskimages:'/images/desktop/image-pocket-borealis.jpg', alt:'Auroras Boreales' },
+    { title:'THE CURIOSITY', mobimages:'/images/mobile/image-curiosity.jpg', deskimages:'/images/desktop/image-curiosity.jpg', alt:'Robot Curiosity' },
+    { title:'MAKE IT FISHEY', mobimages:'/images/mobile/image-fisheye.jpg', deskimages:'/images/desktop/image-fisheye.jpg', alt:'Ojo de pescado' }
+];
+---
+
+<!-- Mobile -->
+<div class="grid grid-cols-1 gap-6 
+lg:hidden">
+
+    { creations.map((creation) => (
+        <div class="relative">    
+
+            <img class="w-full h-auto object-cover"
+            src={ creation.mobimages} alt={ creation.alt }>
+
+            <div class="absolute inset-0">
+                <h1 class="absolute bottom-6 left-6 text-3xl md:text-4xl text-white font-light max-w-39">
+                    { creation.title }    
+                </h1>
+            </div>
+        </div>
+    ))}
+</div>
+
+
+<!-- Desktop -->
+<div class="grid grid-cols-4 gap-6 
+max-lg:hidden">
+
+    { creations.map((creation) => (
+        <div class="relative cursor-pointer group">
+            
+            <img class="w-full h-auto object-cover group-hover:opacity-30 transition duration-200"
+            src={ creation.deskimages } alt={ creation.alt }>
+
+            <div class="absolute inset-0">
+
+                <h1 class="absolute bottom-6 left-6 lg:text-2xl xl:text-4xl text-white 
+                font-light max-w-50 group-hover:text-black transition duration-200">
+                    { creation.title }
+                </h1>
+            </div>
+        </div>
+    ))}
+</div>

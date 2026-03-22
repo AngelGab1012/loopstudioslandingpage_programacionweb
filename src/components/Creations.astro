@@ -1,0 +1,46 @@
+
+---
+import CreationsImages from "./CreationsImages.astro";
+---
+
+<section>
+    <div class="mx-30
+    max-lg:hidden">
+
+        <div class="flex items-center justify-end mb-20">
+
+            <h1 class="mr-auto text-5xl font-light">
+                OUR CREATIONS
+            </h1>
+
+            <button class="border-2 py-1 px-6 text-[20px] tracking-[0.25em]
+            cursor-pointer hover:bg-black hover:text-white transition duration-200">
+                SEE ALL
+            </button>
+        </div>
+
+        <div class="mb-40">
+            <CreationsImages />
+        </div>
+    </div>
+
+    <div class="mx-5 mb-20 flex flex-col
+    lg:hidden">
+
+        <h1 class="text-4xl font-light text-center
+        md:text-5xl">
+            OUR CREATIONS
+        </h1>
+
+        <div class="mt-10 mb-10
+        md:mt-20 md:mb-20">
+            <CreationsImages />
+        </div>
+
+        <div class="m-auto">
+            <button class="border-2 py-1 px-10 tracking-[0.25em] md:text-2xl">
+                SEE ALL
+            </button>
+        </div>
+    </div>
+</section>
